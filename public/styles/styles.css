@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+   height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-container {
+    display: flex;
+    height: 100%;
+}
+
+.main__information {
+    background-color: yellow;
+  
+    flex: 1;
+}
+
+.sidebar {
+    flex: 0 0 20%;
+    background-color: blue;
+}
+
+.footer {
+    background-color: green;
+    padding: 2rem;
+}
+
+.header {
+    padding: 2rem;
+    background-color: blue;
+}
+
+.navigation {
+    background-color: orange;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    a {
+        padding: 2rem;
+        text-decoration: none;
+    }
+}
