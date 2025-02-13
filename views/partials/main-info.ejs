@@ -1,6 +1,14 @@
 <div class="main-container">
     <%- include('./sidebar.ejs') %>
-    <div class="main__information">
-        Hey
-    </div>
+        <div class="main__information">
+            <% if(locals.preview) { %>
+                <% if(!isNaN(locals.indexID)) { %>
+                    <a href="../<%= (animalData[indexID].group +"/"+ animalData[indexID].name).replaceAll(" ", "").toLowerCase() %>">Go to <%= animalData[indexID].name %>'s Page</a>         
+                    <% } else { %> 
+                     <%= description %>
+                     <% } %>
+            <% } else { %>
+                <%= typeof(locals.indexID)==='number' ? animalData[indexID].description : locals.description ? description : "No Descrption Set" %>
+            <% } %>
+        </div>
 </div>
