@@ -14,7 +14,8 @@ allAnimals.forEach((animal, index) => {
             title: "Node Zoo",
             animalData: allAnimals,
             indexID: index,
-            preview: true
+            preview: true,
+            url: req.url
         });
     })
 })

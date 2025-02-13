@@ -1,16 +1,11 @@
 <div class="sidebar">
-    <% if(locals.preview && locals.animalData) { %>
+    <% let current = "yes" %>
+    <% if(locals.animalData) { %>
         <% animalData.forEach(animal => { console.log(animal.name.replaceAll(" ", "")) %>
-        <a href="../preview/<%= animal.name.replaceAll(" ", "").toLowerCase() %>" class="sidebar__btn"> <%= animal.name %>
-        </a>
+        <a href="../<%= locals.preview ? 'preview/' : (animal.group.toLowerCase() + '/') %><%= animal.name.replaceAll(" ", "").toLowerCase() %>" class="sidebar__btn <% if(locals.url) { %> 
+            <%= url ===  '/'+animal.name.toLowerCase().replaceAll(" ", "") ? 'active' : "" %>
+            <%  } %> "><%= animal.name %></a>
         <% }); %>
       
-    <% } else if(locals.animalData) {%>
-        <% animalData.forEach(animal => { console.log(animal.name.replaceAll(" ", "")) %>
-            <a href="../<%= (animal.group +"/"+ animal.name).replaceAll(" ", "").toLowerCase() %>" class="sidebar__btn <% if(locals.url) { %> 
-                <%= url ===  '/'+animal.name.toLowerCase().replaceAll(" ", "") ? 'active' : "" %>
-                <%  } %> "><%= animal.name %></a>
-          
-            <% }); %>
-                <% } %>
+    <% } %>
 </div>
